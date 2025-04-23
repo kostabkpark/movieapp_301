@@ -6,7 +6,8 @@ function Movie({id, coverImage, title, summary, genres}){
         <div>
             <img src={coverImage} alt="cover_image" />
             <h2>
-                <Link to={`/movie/${id}`}>{title}</Link>
+                <a href={`/movie/${id}`}>a : {title}</a> <br />
+                <Link to={`/movie/${id}`}>Link : {title}</Link>
             </h2>
             <p>{summary}</p>
             <ul>
@@ -19,6 +20,7 @@ function Movie({id, coverImage, title, summary, genres}){
 }
 
 Movie.prototype = {
+    id : PropTypes.number.isRequired,
     coverImage : PropTypes.string.isRequired,
     title :  PropTypes.string.isRequired,
     summary : PropTypes.string.isRequired,
